@@ -13,7 +13,7 @@ class Round
   def take_turn(guess)
     @turns << Turn.new(guess, current_card)
     @deck.cards.shift
-    current_card
+    # current_card <---- you don't need to call this again. Because it is called as an argument on line 14, it will already make the method happen
 
     @turns.last
   end
@@ -27,6 +27,8 @@ class Round
       if turn.card.category == category
         turn.correct?
       end
+
+      # turn.correct? if turn.card.category == category
     end
   end
 

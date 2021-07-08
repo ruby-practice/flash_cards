@@ -54,6 +54,7 @@ RSpec.describe Round do
 
     new_turn = round.take_turn("Juneau")
 
+    # if you test something this way, you should also test that before you took a turn that round.turns.last was soemthing else first then became this card as a result. then your test is more robust
     expect(new_turn).to be(round.turns.last)
   end
 
@@ -90,6 +91,7 @@ RSpec.describe Round do
 
     new_turn = round.take_turn("Juneau")
 
+    # your test says that you're testing it is stored, but, you're just testing that it's an instance of turn again
     expect(new_turn).to be_instance_of(Turn)
   end
 
